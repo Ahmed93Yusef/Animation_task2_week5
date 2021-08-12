@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">animation_week5</string>
+    <string name="media_player_animation">Media Player Animation</string>
+    <string name="my_video_title_animation">My video Title Animation</string>
+</resources>

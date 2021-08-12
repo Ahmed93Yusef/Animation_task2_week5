@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/image_task2"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:background="@drawable/task2"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/text_my"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/image_task2" />
+        <Constraint
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:id="@+id/arrow_icon"
+            android:src="@drawable/play_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/image_task2"/>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/image_task2"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:background="@drawable/task2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <Constraint
+            android:id="@+id/text_my"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toEndOf="@id/image_task2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <Constraint
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/arrow_icon"
+            android:src="@drawable/play_arrow"
+            app:layout_constraintEnd_toEndOf="@id/text_my"
+            app:layout_constraintTop_toTopOf="@id/text_my"
+            app:layout_constraintBottom_toBottomOf="@id/text_my"
+            android:layout_marginEnd="32dp"/>
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start">
+        <OnSwipe
+            app:touchAnchorId="@+id/image_task2"
+            app:dragDirection="dragUp"/>
+    </Transition>
+
+</MotionScene>
